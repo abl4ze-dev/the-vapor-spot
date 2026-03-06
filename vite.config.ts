@@ -37,26 +37,8 @@ export default defineConfig(({ mode }) => ({
           },
         ],
       },
-      workbox: {
-        maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
-        globPatterns: ["**/*.{js,css,html,ico,png,svg,woff,woff2}"],
-        runtimeCaching: [
-          {
-            urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
-            handler: "CacheFirst",
-            options: {
-              cacheName: "google-fonts-cache",
-              expiration: {
-                maxEntries: 10,
-                maxAgeSeconds: 60 * 60 * 24 * 365,
-              },
-              cacheableResponse: {
-                statuses: [0, 200],
-              },
-            },
-          },
-        ],
-      },
+      // ✅ WORKBOX DISABLED FOR VERCEL BUILD
+      workbox: false
     }),
   ].filter(Boolean),
   resolve: {
@@ -66,7 +48,7 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     target: "esnext",
-    chunkSizeWarningLimit: 2000, // increase from default 500 KB
+    chunkSizeWarningLimit: 2000, // Increase warning limit
     rollupOptions: {
       output: {
         manualChunks: {
@@ -99,7 +81,9 @@ export default defineConfig(({ mode }) => ({
             "@radix-ui/react-toast",
             "@radix-ui/react-toggle",
             "@radix-ui/react-toggle-group",
-            "@radix-ui/react-tooltip"
+            "@radix-ui/react-tooltip",
+            "recharts",
+            "embla-carousel-react"
           ],
         },
       },
