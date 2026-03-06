@@ -1,0 +1,199 @@
+/* Calendar Theme - Glassmorphism Pink/Gray */
+
+/* Caption layout - prevent overlap */
+.calendar-themed .rdp-caption {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 0.5rem !important;
+  gap: 0.5rem !important;
+  position: relative !important;
+}
+
+/* Hide the default caption label when using dropdowns */
+.calendar-themed .rdp-vhidden {
+  display: none !important;
+}
+
+/* Dropdowns container - centered */
+.calendar-themed .rdp-caption_dropdowns {
+  display: flex !important;
+  gap: 0.5rem !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 1 !important;
+}
+
+/* Individual dropdown wrappers */
+.calendar-themed .rdp-dropdown_month,
+.calendar-themed .rdp-dropdown_year {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+/* Hide the aria div overlay */
+.calendar-themed .rdp-dropdown_month > div[aria-hidden="true"],
+.calendar-themed .rdp-dropdown_year > div[aria-hidden="true"] {
+  display: none !important;
+}
+
+/* Month/Year dropdown selects - Glassmorphism Style */
+.calendar-themed select,
+.calendar-themed .rdp-dropdown,
+.rdp-caption_dropdowns select,
+.rdp select,
+select[name="months"],
+select[name="years"] {
+  background: rgba(30, 30, 30, 0.95) !important;
+  border: 1px solid hsl(0, 0%, 27%) !important;
+  border-radius: 0.75rem !important;
+  color: hsl(330, 30%, 95%) !important;
+  padding: 0.5rem 2rem 0.5rem 0.75rem !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 0.75rem center !important;
+  min-width: 90px !important;
+}
+
+.calendar-themed select:hover,
+.calendar-themed .rdp-dropdown:hover,
+.rdp-caption_dropdowns select:hover,
+.rdp select:hover,
+select[name="months"]:hover,
+select[name="years"]:hover {
+  background: rgba(51, 51, 51, 0.98) !important;
+  border-color: hsl(0, 0%, 46%) !important;
+  box-shadow: 0 6px 20px rgba(63, 61, 62, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+}
+
+.calendar-themed select:focus,
+.calendar-themed .rdp-dropdown:focus,
+.rdp-caption_dropdowns select:focus,
+.rdp select:focus,
+select[name="months"]:focus,
+select[name="years"]:focus {
+  outline: none !important;
+  border-color: hsl(0, 0%, 35%) !important;
+  box-shadow: 0 0 0 3px hsla(0, 1%, 65%, 0.3), 0 6px 20px rgba(78, 77, 78, 0.25) !important;
+}
+
+/* Dropdown options - Dark themed */
+.calendar-themed select option,
+.calendar-themed .rdp-dropdown option,
+.rdp-caption_dropdowns select option,
+.rdp select option,
+select[name="months"] option,
+select[name="years"] option {
+  background: hsl(0, 0%, 12%) !important;
+  color: hsl(330, 30%, 95%) !important;
+  padding: 0.75rem !important;
+  font-size: 0.875rem !important;
+}
+
+.calendar-themed select option:hover,
+.calendar-themed .rdp-dropdown option:hover,
+.calendar-themed select option:checked,
+.calendar-themed .rdp-dropdown option:checked,
+select[name="months"] option:checked,
+select[name="years"] option:checked {
+  background: hsl(0, 0%, 65%) !important;
+  color: white !important;
+}
+
+/* Navigation buttons - positioned at edges */
+.calendar-themed .rdp-nav {
+  display: flex !important;
+  gap: 0.25rem !important;
+  align-items: center !important;
+}
+
+/* Navigation button styling */
+.calendar-themed button[name="previous-month"],
+.calendar-themed button[name="next-month"] {
+  position: relative !important;
+  background: rgba(30, 30, 30, 0.9) !important;
+  border: 1px solid hsl(0, 0%, 31%) !important;
+  color: hsl(330, 30%, 95%) !important;
+  transition: all 0.2s ease !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.calendar-themed button[name="previous-month"]:hover,
+.calendar-themed button[name="next-month"]:hover {
+  background: hsl(0, 0%, 57%) !important;
+  border-color: hsl(0, 0%, 43%) !important;
+  color: white !important;
+}
+
+/* Input fields in calendar (if any) */
+.calendar-themed input {
+  background: rgba(30, 30, 30, 0.95) !important;
+  border: 1px solid hsl(0, 0%, 48%) !important;
+  border-radius: 0.75rem !important;
+  color: hsl(330, 30%, 95%) !important;
+  padding: 0.5rem 0.75rem !important;
+  font-size: 0.875rem !important;
+  transition: all 0.2s ease !important;
+  backdrop-filter: blur(20px) !important;
+}
+
+.calendar-themed input:focus {
+  outline: none !important;
+  border-color: hsl(0, 0%, 47%) !important;
+  box-shadow: 0 0 0 3px hsla(0, 0%, 29%, 0.25) !important;
+}
+
+.calendar-themed input::placeholder {
+  color: hsl(0, 0%, 52%) !important;
+}
+
+/* Scrollbar styling for dropdowns */
+.calendar-themed select::-webkit-scrollbar,
+select[name="months"]::-webkit-scrollbar,
+select[name="years"]::-webkit-scrollbar {
+  width: 8px;
+}
+
+.calendar-themed select::-webkit-scrollbar-track,
+select[name="months"]::-webkit-scrollbar-track,
+select[name="years"]::-webkit-scrollbar-track {
+  background: hsl(0, 0%, 12%);
+  border-radius: 4px;
+}
+
+.calendar-themed select::-webkit-scrollbar-thumb,
+select[name="months"]::-webkit-scrollbar-thumb,
+select[name="years"]::-webkit-scrollbar-thumb {
+  background: hsl(0, 0%, 40%);
+  border-radius: 4px;
+}
+
+.calendar-themed select::-webkit-scrollbar-thumb:hover,
+select[name="months"]::-webkit-scrollbar-thumb:hover,
+select[name="years"]::-webkit-scrollbar-thumb:hover {
+  background: hsl(0, 0%, 49%);
+}
+
+/* Firefox scrollbar */
+.calendar-themed select,
+select[name="months"],
+select[name="years"] {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(330, 1%, 45%) hsl(0, 0%, 12%);
+}
+
+/* Hide dropdown icon overlay that causes overlap */
+.calendar-themed .rdp-dropdown_icon {
+  display: none !important;
+}
